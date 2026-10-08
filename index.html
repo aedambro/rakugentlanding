@@ -782,16 +782,15 @@ main{
   }
 
   .hero-image-shell{
-  border-radius:50%;
+  border-radius:28px;
   width:78%;
-  aspect-ratio:1 / 1;
   margin:0 auto;
   transform:translateY(-28px);
-  }
+}
 
   .hero-image-shell:before{
-  border-radius:50%;
-  }
+  border-radius:28px;
+}
 
   .section{
     padding:75px 18px;
@@ -825,12 +824,14 @@ main{
   }
 
   .founder-image{
-    max-height:260px;
-    width:auto;
-    max-width:70%;
-    margin:0 auto;
-    display:block;
-  }
+  width:70%;
+  aspect-ratio:1 / 1;
+  max-height:none;
+  object-fit:cover;
+  border-radius:50%;
+  margin:0 auto;
+  display:block;
+}
 
   .support-grid{
     grid-template-columns:1fr;
