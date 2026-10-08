@@ -694,6 +694,54 @@ main{
   color:#222;
 }
 
+.mobile-scroll-arrows{
+  display:none;
+}
+
+@media(max-width:680px){
+
+  .mobile-scroll-arrows{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:3px;
+    margin-top:18px;
+    height:24px;
+    opacity:.45;
+    transition:opacity .25s ease;
+  }
+
+  .mobile-scroll-arrows span{
+    display:block;
+    font-size:17px;
+    line-height:1;
+    font-weight:400;
+    animation:mobileArrowFloat 1.2s ease-in-out infinite;
+  }
+
+  .mobile-scroll-arrows span:nth-child(2){
+    animation-delay:.08s;
+  }
+
+  .mobile-scroll-arrows span:nth-child(3){
+    animation-delay:.16s;
+  }
+
+  .mobile-scroll-arrows.hidden{
+    opacity:0;
+    pointer-events:none;
+  }
+
+  @keyframes mobileArrowFloat{
+    0%,100%{
+      transform:translateY(0);
+    }
+    50%{
+      transform:translateY(5px);
+    }
+  }
+}
+
 /* RESPONSIVE */
 
 @media(max-width:950px){
@@ -949,6 +997,11 @@ main{
         A simpler way to keep the moving parts of property work together.
       </p>
 
+      <div class="mobile-scroll-arrows" aria-hidden="true">
+        <span>↓</span>
+        <span>↓</span>
+        <span>↓</span>
+      </div>
 
       <div class="testimonial-grid">
 
@@ -1730,6 +1783,34 @@ document.addEventListener(
 
   }
 );
+
+const mobileScrollArrows =
+  document.querySelector(".mobile-scroll-arrows");
+
+function updateMobileScrollArrows(){
+
+  if(!mobileScrollArrows) return;
+
+  if(window.innerWidth <= 680 && window.scrollY <= 2){
+    mobileScrollArrows.classList.remove("hidden");
+  }else{
+    mobileScrollArrows.classList.add("hidden");
+  }
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateMobileScrollArrows,
+  {passive:true}
+);
+
+window.addEventListener(
+  "resize",
+  updateMobileScrollArrows
+);
+
+updateMobileScrollArrows();
 
 </script>
 
