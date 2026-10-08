@@ -498,7 +498,7 @@ main{
 
 .founder-signature{
   margin-top:27px;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;
   font-size:11px;
   font-weight:650;
   letter-spacing:.09em;
@@ -758,8 +758,8 @@ main{
   }
 
   .hero{
-    padding:55px 18px 70px;
-    gap:18px;
+    padding:35px 18px 70px;
+    gap:14px;
     grid-template-columns:1fr 1fr;
   }
 
@@ -768,18 +768,20 @@ main{
   }
 
   .hero h1{
-    font-size:clamp(22px,6.5vw,38px);
+    font-size:clamp(27px,8vw,44px);
   }
 
   .hero-sub{
     margin:16px 0 18px;
-    font-size:11px;
+    font-size:10px;
     line-height:1.35;
   }
 
   .hero-image-shell{
     border-radius:28px;
-    width:100%;
+    width:78%;
+    margin:0 auto;
+    transform:translateY(-18px);
   }
 
   .hero-image-shell:before{
@@ -847,7 +849,8 @@ main{
 @media(max-width:430px){
 
   .testimonial-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
   }
 
   .testimonial-card:nth-child(5){
@@ -856,7 +859,8 @@ main{
   }
 
   .hero-button{
-    width:100%;
+    width:auto;
+    margin-top:12px;
   }
 }
 </style>
