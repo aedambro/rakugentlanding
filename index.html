@@ -759,19 +759,27 @@ main{
 
   .hero{
     padding:55px 18px 70px;
-    gap:45px;
+    gap:18px;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-copy{
+    padding-left:0;
   }
 
   .hero h1{
-    font-size:clamp(46px,13vw,72px);
+    font-size:clamp(22px,6.5vw,38px);
   }
 
   .hero-sub{
-    font-size:18px;
+    margin:16px 0 18px;
+    font-size:11px;
+    line-height:1.35;
   }
 
   .hero-image-shell{
     border-radius:28px;
+    width:100%;
   }
 
   .hero-image-shell:before{
@@ -783,8 +791,9 @@ main{
   }
 
   .testimonial-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:8px;
+    margin-top:28px;
   }
 
   .testimonial-card:nth-child(4),
@@ -793,8 +802,27 @@ main{
   }
 
   .testimonial-card:nth-child(5){
-    grid-column:1/-1;
-    max-width:calc(50% - 6px);
+    grid-column:auto;
+    max-width:none;
+  }
+
+  .client-name{
+    margin:9px 2px 4px;
+    font-size:9px;
+  }
+
+  .client-quote{
+    margin:0 2px;
+    font-size:8px;
+    line-height:1.35;
+  }
+
+  .founder-image{
+    max-height:260px;
+    width:auto;
+    max-width:70%;
+    margin:0 auto;
+    display:block;
   }
 
   .support-grid{
